@@ -5,7 +5,7 @@
 # @File Name: lyot_filter_analyze.py
 # @Project: lyot_filter
 
-# @Last Modified time: 2018-06-07 14:04:50
+# @Last Modified time: 2018-06-07 14:46:49
 #####################################################
 
 from astropy.io import fits
@@ -65,7 +65,7 @@ else:
         img = hdus[0].data
         hdus.close()
         rows,cols = img.shape
-        rot_angles.append(find_tilt(img,angle_range=[0.6,.8]))
+        rot_angles.append(find_tilt(img,angle_range=[-0.7,0.6]))
         print('Tilt - ' + str(rot_angles[-1]))
 
     if np.std(rot_angles) > 0.2:
