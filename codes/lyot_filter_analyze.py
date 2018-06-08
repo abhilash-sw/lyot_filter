@@ -5,7 +5,7 @@
 # @File Name: lyot_filter_analyze.py
 # @Project: lyot_filter
 
-# @Last Modified time: 2018-06-07 14:46:49
+# @Last Modified time: 2018-06-08 13:14:07
 #####################################################
 
 from astropy.io import fits
@@ -52,9 +52,11 @@ rot_ang_file2 = glob.glob(out_folder+'/rotation_angle.pkl')
 
 if rot_ang_file1:
     fid_rot = open(rot_ang_file1, 'rb')
+    print('Rotation angle file found in '+rot_ang_file1+'. Loading...')
     rot_angle = pickle.load(fid_rot)
 elif rot_ang_file2:
     fid_rot = open(rot_ang_file2, 'rb')
+    print('Rotation angle file found in '+rot_ang_file2+'. Loading...')
     rot_angle = pickle.load(fid_rot)
 else:
     rot_angles = []
